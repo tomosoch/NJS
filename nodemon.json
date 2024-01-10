@@ -1,0 +1,6 @@
+{   
+    "ignore": ["node_modules", ".next"],
+    "watch": ["**/*"],
+    "ext": "js json",
+    "exec": "next dev --port 4444"
+}
