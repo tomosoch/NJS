@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  app:
+    image: njs-docker-i
+    container_name: njs-docker-c
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # working_dir: /nextjs-dashboard
+    # command: bash -c " npm i && npm run dev"
+    command: bash -c "npm i @vercel/postgres && npm run dev"
+    ports:
+      - '4444:4444'
+      
+    volumes: 
+      - .:/app
+      - /app/node_modules
+
+    stdin_open: true
+    tty: true
+      
